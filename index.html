@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+
+<style >
+    body,html{
+      margin:0px;
+      padding:0px;
+    }
+    a{
+      display:block;
+      text-align:center;
+    }
+
+    .sidebar{
+      width:0px;
+      height:100%;
+      position:fixed;
+      background:yellow;
+         transition:.6s;
+      padding-top:20px;
+      overflow-x:hidden;
+    }
+    .sidebar .close{
+      position:absolute;
+      top:0;
+      right:0;
+      margin:5px 10px;
+    }
+    .sidebar .close a{
+      text-decoration:none;
+    }
+    .main{
+    transition:.6s;
+    }
+</style>
+<body>
+  <div class="sidebar">
+    <a href="#">1</a>
+    <a href="#">2</a>
+     <a href="#">3</a>
+     <div class="close"><a href="#" onclick="closeNav()">x</a></div>
+  </div>
+  <div class="main">
+    <button onclick="openNav()">|||Menu</button>
+  </div>
+  
+  <script>
+  function openNav(){
+      document.querySelector('.sidebar').style.width="100px";
+      document.querySelector('.main').style.marginLeft="100px";
+
+  }
+  function closeNav(){
+     document.querySelector('.sidebar').style.width="0px";
+      document.querySelector('.main').style.marginLeft="0px";
+  }
+  </script>
+</body>
+</html>
